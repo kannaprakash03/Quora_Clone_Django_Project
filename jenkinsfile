@@ -1,1 +1,16 @@
+pipeline {
+    agent any
 
+    triggers {
+        githubPush()
+    }
+
+    stages {
+        stages('Checkout') {
+            steps {
+                //Checkout the repository
+                checkout scm
+            }
+        }
+    }
+}
